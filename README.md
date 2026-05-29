@@ -1,50 +1,135 @@
-# Welcome to your Expo app 👋
+# 🎬 LP3I Cinema — Aplikasi Pemesanan Tiket Bioskop
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+[![React Native](https://img.shields.io/badge/React%20Native-0.81.5-61dafb?logo=react&logoColor=black&style=flat-square)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-SDK%2054-000020?logo=expo&logoColor=white&style=flat-square)](https://expo.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-3178c6?logo=typescript&logoColor=white&style=flat-square)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-## Get started
+Aplikasi mobile berbasis **React Native** dan **Expo (SDK 54)** yang dirancang khusus untuk mempermudah simulasi pemesanan tiket bioskop secara cepat, intuitif, dan responsif. Dilengkapi dengan antarmuka bertema gelap (*Dark Mode*) yang futuristik, transisi yang mulus, dan kalkulasi pembayaran instan.
 
-1. Install dependencies
+---
 
+## ✨ Fitur Unggulan
+
+Aplikasi **LP3I Cinema** dibekali berbagai fitur modern dan alur transaksi yang realistis:
+
+### 1. 🌌 Animated Splash Screen
+* Animasi transisi masuk (*fade-in*) yang sangat halus.
+* Indikator pemuatan (*progress bar*) dinamis.
+* Identitas brand "LP3I Cinema" yang kuat sejak aplikasi dibuka.
+
+### 2. 🔐 Secured Login Portal
+* Pintu masuk aman dengan validasi username dan password.
+* Deteksi kolom kosong menggunakan pesan peringatan interaktif (*alert*).
+* Desain minimalis yang ramah pengguna.
+
+### 3. 🎟️ Dynamic Movie Dashboard
+* **Coming Soon Slider:** Slider film yang akan segera tayang dengan fitur *auto-scroll* otomatis dan efek visual yang hidup.
+* **Now Playing Gallery:** Daftar film yang sedang tayang beserta genre, jam tayang, harga tiket, dan badge status *live*.
+* Sistem navigasi langsung dari poster film untuk mulai memesan.
+
+### 4. 🧮 Interactive Booking System (Pesan Tiket)
+* Pengisian jumlah tiket yang diinginkan secara mudah.
+* **Real-time Cost Calculator:** Menghitung total biaya otomatis berdasarkan harga tiket dikalikan jumlah pesanan.
+* **Smart Change Calculator:** Memvalidasi uang bayar dan menampilkan jumlah kembalian secara langsung saat uang dimasukkan.
+* Validasi pembayaran cerdas agar transaksi tidak dapat diproses jika uang pembayaran kurang.
+
+### 5. 📄 Virtual Printed Ticket (Cetak Struk)
+* Struk tiket digital dengan desain klasik retro layaknya tiket fisik bioskop nyata.
+* Pembuatan **Kode Tiket unik** (*Randomized Booking Code*) dengan format `LP3I-XXXXXX`.
+* Detail transaksi lengkap: Judul film, tanggal transaksi aktual, studio, harga, jumlah tiket, total bayar, nominal uang bayar, dan nominal kembalian.
+* Dilengkapi dengan simulasi **barcode digital** untuk verifikasi masuk studio.
+
+---
+
+## 🛠️ Spesifikasi Teknologi
+
+Proyek ini dibangun menggunakan teknologi mutakhir dalam pengembangan aplikasi mobile multiplatform:
+
+* **Framework Utama:** [React Native](https://reactnative.dev/) (v0.81.5)
+* **Peralatan & SDK:** [Expo SDK 54](https://expo.dev/) (menggunakan `expo-router` untuk sistem navigasi berbasis file yang mutakhir)
+* **Bahasa Pemrograman:** [TypeScript](https://www.typescriptlang.org/) (menjamin tipe data aman dan terstruktur)
+* **Ikonografi:** `@expo/vector-icons` (Ionicons)
+* **Efek & Transisi:** React Native Animated API & Reanimated
+* **Penyajian Gambar:** `expo-image` (optimasi performa rendering gambar poster)
+
+---
+
+## 📂 Struktur Direktori Proyek
+
+Struktur folder terorganisir dengan arsitektur bersih demi kemudahan pengembangan lebih lanjut:
+
+```text
+bioskop/
+├── app/                  # Direktori utama Expo Router (File-based Routing)
+│   ├── (tabs)/           # Halaman utama aplikasi
+│   │   ├── _layout.tsx   # Konfigurasi navigasi Stack utama
+│   │   ├── index.tsx     # Gerbang masuk (mengalihkan ke Splash)
+│   │   ├── splash.tsx    # Layar pembuka (Splash Screen) dengan animasi
+│   │   ├── login.tsx     # Layar autentikasi masuk
+│   │   ├── dashboard.tsx # Layar utama daftar film (Now Playing & Coming Soon)
+│   │   ├── pesan.tsx     # Formulir pemesanan tiket & kalkulator pembayaran
+│   │   └── cetak.tsx     # Desain tiket fisik virtual & barcode generator
+│   └── modal.tsx         # Modal dialog pendukung
+├── assets/               # Aset statis aplikasi
+│   └── images/           # File gambar logo dan poster film berkualitas tinggi
+├── components/           # Komponen UI modular yang dapat digunakan kembali
+├── constants/            # Konfigurasi warna, tema, dan data konstan
+├── hooks/                # Custom React hooks pendukung
+├── package.json          # File konfigurasi dependensi npm
+└── tsconfig.json         # Konfigurasi compiler TypeScript
+```
+
+---
+
+## 🚀 Cara Menjalankan Aplikasi di Komputer Anda
+
+Ikuti langkah-langkah di bawah ini untuk memulai pengembangan atau mencoba aplikasi ini secara lokal:
+
+### Prasyarat
+Pastikan Anda sudah menginstal:
+* [Node.js](https://nodejs.org/) (versi LTS direkomendasikan)
+* Aplikasi **Expo Go** pada smartphone Android atau iOS Anda (opsional, untuk pengujian langsung di perangkat fisik).
+
+### Langkah-langkah:
+
+1. **Clone repositori ini:**
+   ```bash
+   git clone https://github.com/Rizqi2024/bioskop.git
+   cd bioskop
+   ```
+
+2. **Instal dependensi proyek:**
+   Menggunakan npm:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. **Jalankan server Expo:**
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+4. **Buka aplikasi:**
+   * **Smartphone (Expo Go):** Scan QR Code yang muncul di terminal menggunakan kamera HP Anda (iOS) atau aplikasi Expo Go (Android).
+   * **Emulator Android:** Tekan tombol `a` di terminal jika emulator Android Studio Anda aktif.
+   * **Simulator iOS:** Tekan tombol `i` di terminal jika simulator macOS Xcode Anda aktif.
+   * **Web Browser:** Tekan tombol `w` untuk menjalankannya pada web browser lokal Anda.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 👤 Kontributor & Pengembang
 
-## Get a fresh project
+Aplikasi hebat ini sepenuhnya dirancang dan dikembangkan oleh:
 
-When you're ready, run:
+* **Rizqi**
+  * GitHub: [@Rizqi2024](https://github.com/Rizqi2024)
+  * Kontribusi: Pembuatan aplikasi, integrasi visual, logika kalkulator pemesanan, dan desain virtual ticket.
 
-```bash
-npm run reset-project
-```
+---
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 📄 Lisensi
 
-## Learn more
+Proyek ini dilindungi di bawah lisensi **MIT**. Anda bebas menyalin, memodifikasi, dan mendistribusikan proyek ini dengan menyertakan atribusi pembuat asli.
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+*Dibuat dengan 💙 dan dedikasi oleh Rizqi untuk memajukan portofolio aplikasi mobile.*
